@@ -15,3 +15,6 @@ Question:
     • How many generalists and specialists should be employed for each of the two possible call distributions?
 
 Answer:
+I would once again hire 80 specialists and delegate them accordingly based on the mixed call volume so,
+in the first case (48 for sales and 32 for support) and for the second case (32 for sales and 48 for support).
+
