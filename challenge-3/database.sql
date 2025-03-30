@@ -6,7 +6,7 @@ create table logins (
 );
 
 -- answer
-SELECT ROUND(100 * COUNT(DISTINCT t2.user_id) / COUNT(DISTINCT t1.user_id), 2) AS perc
+SELECT ROUND(100 * COUNT(CASE WHEN t2.user_id IS NOT NULL THEN t1.user_id END) / COUNT(DISTINCT t1.user_id), 2) AS perc
 FROM logins t1
 LEFT JOIN logins t2
 ON t1.user_id = t2.user_id
