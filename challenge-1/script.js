@@ -2,8 +2,8 @@ let timer;
 let timeRemaining;
 let isTimerRunning = false;
 
-document.getElementById("startBtn").addEventListener("onClick", startTimer);
-document.getElementById("resetBtn").addEventListener("onClick", resetTimer);
+document.getElementById("startBtn").addEventListener("click", startTimer);
+document.getElementById("resetBtn").addEventListener("click", resetTimer);
 
 function startTimer() {
     if (isTimerRunning) return;
