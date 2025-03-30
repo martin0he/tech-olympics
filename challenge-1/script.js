@@ -21,13 +21,12 @@ function startTimer() {
         let mins = Math.floor(timeRemaining / 60);
         let secs = timeRemaining % 60;
         document.getElementById("display").innerHTML = mins + ":" + secs;
+        if (timeRemaining == 0) {
+            clearInterval(timer);
+            isTimerRunning = false;
+            showClock();
+        }
     }, 1000);
-
-    if (timeRemaining == 0) {
-        clearTimeout(timer);
-        isTimerRunning = false;
-        showClock();
-    }
 }
 
 function showClock() {
@@ -43,7 +42,7 @@ function showClock() {
 }
 
 function resetTimer() {
-    clearTimeout(timer);
+    clearInterval(timer);
     isTimerRunning = false;
     showClock();
 }
