@@ -4,8 +4,9 @@ def fibonacci(i):
    else:
     return fibonacci(i - 1) + fibonacci(i - 2)
 
-for i in range (10000000):
-    sum = 0
-    if (fibonacci(i) % 2 != 0):
-        sum += fibonacci(i)
-    return sum
+def oddsum:
+    for i in range (10000000):
+        sum = 0
+        if (fibonacci(i) % 2 != 0):
+            sum += fibonacci(i)
+        return sum
