@@ -5,5 +5,5 @@ create table logins (
     PRIMARY KEY (user_id, login_date)
 );
 
-SELECT count(*) * 100.0 / (SELECT count(*) FROM logins WHERE DATEDIFF(day, CURRENT_DATE, login_date) < 7)
-FROM logins;
+-- return perc
+SELECT COUNT * 100 / (SELECT COUNT FROM logins) AS perc FROM logins WHERE login_date >= CURRENT_DATE - INTERVAL 7 DAY;
