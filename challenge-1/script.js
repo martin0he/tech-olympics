@@ -10,22 +10,24 @@ function startTimer() {
 
     let minutes = document.getElementById("minutesInput").value;
     timeRemaining = minutes * 60;
+    // converts into seconds
     isTimerRunning = true;
 
     document.getElementById("status").innerHTML = "Mode: Timer";
 
     timer = setInterval(() => {
         timeRemaining--;
+        // with each second
         let mins = Math.floor(timeRemaining / 60);
         let secs = timeRemaining % 60;
         document.getElementById("display").innerHTML = mins + ":" + secs;
-
-        if (timeRemaining == 0) {
-            clearTimeout(timer);
-            isTimerRunning = false;
-            showClock();
-        }
     }, 1000);
+
+    if (timeRemaining == 0) {
+        clearTimeout(timer);
+        isTimerRunning = false;
+        showClock();
+    }
 }
 
 function showClock() {
