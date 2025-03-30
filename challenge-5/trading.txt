@@ -5,7 +5,7 @@ from the spread while minimizing risk, how would you set your
 bid and ask prices?
 
 
-The bid should be $92
-Ask price should be $135
+The bid should be $99.95
+Ask price should be $100.05
 
-This will maximize profit by only purchasing when stocks are low, and selling them when they reach a high point.
+stays close enough to market price but allows for a spread
