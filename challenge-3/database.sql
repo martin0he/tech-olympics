@@ -5,5 +5,11 @@ create table logins (
     PRIMARY KEY (user_id, login_date)
 );
 
--- return perc
-SELECT COUNT * 100 / (SELECT COUNT FROM logins) AS perc FROM logins WHERE login_date >= CURRENT_DATE - INTERVAL 7 DAY;
+-- answer
+SELECT ROUND(100 * COUNT(DISTINCT t2.user_id) / COUNT(DISTINCT t1.user_id), 2) AS perc
+FROM logins t1
+LEFT JOIN logins t2
+ON t1.user_id = t2.user_id
+AND t2.login_date > t1.login_date
+AND t2.login_date <= t1.login_date + INTERVAL 7 DAY
+WHERE t1.login_date = (SELECT MIN(login_date) FROM logins t3 WHERE t3.user_id = t1.user_id);
