@@ -5,4 +5,4 @@ and the other earns $2M. If both compete, you each earn $3M.
 What’s the Nash equilibrium?
 
 Nash equilibrium:
-(Cooperate, Cooperate)
+It is better for each player to compete regardless of what the other person does, so the Nash equilibrium is (3, 3) or both players competing and earning $3M each.
