@@ -7,4 +7,18 @@ f = {10 : 3, 20 : 5, 30 : 2, 40 : 7, 50 : 1}
 
 What is the optimal BST structure that minimizes the weighted search cost?
 
+answer: (root -> left node & right node)
+20
+10
+40
+30
+50
+
 Bonus: How does dynamic programming help solve this problem efficiently?
+
+
+answer:
+dp can be used to optimize this problem by storing a dp array:
+dp[i][j] as the minimum cost of searching of searching keys from i to j.
+recurrence relation: dp[i][j] = min (for all k) (cost[i][k-1] + cost[k+1][j] + sum of freq from i to j)
+essentially, we avoid recomputing the frequencies of smaller subtrees and reuse those calcutions (stored in dp array) in a bottom up approach.
