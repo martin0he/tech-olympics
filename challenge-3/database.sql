@@ -4,3 +4,7 @@ create table logins (
     login_date DATE NOT NULL,
     PRIMARY KEY (user_id, login_date)
 );
+
+SELECT count(*) * 100.0 / (select count(*) from logins)
+FROM logins
+WHERE DATEDIFF(day, CURRENT_DATE, login_date) < 7;
