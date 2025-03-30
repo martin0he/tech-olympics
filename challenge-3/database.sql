@@ -12,4 +12,4 @@ LEFT JOIN logins t2
 ON t1.user_id = t2.user_id
 AND t2.login_date > t1.login_date
 AND t2.login_date <= t1.login_date + INTERVAL 7 DAY
-WHERE t1.login_date = (SELECT MIN(login_date) FROM logins t3 WHERE t3.user_id = t1.user_id);
+WHERE t1.login_date = (SELECT MIN(t3.login_date) FROM logins t3 WHERE t3.user_id = t1.user_id);
